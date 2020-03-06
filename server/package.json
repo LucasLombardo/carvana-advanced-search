@@ -1,0 +1,12 @@
+{
+    "name": "carvana-advanced-search-server",
+    "main": "dist/index.js",
+    "license": "UNLICENSED",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "prettier": "^1.19.1",
+        "typescript": "^3.8.3"
+    }
+}
