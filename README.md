@@ -1,16 +1,24 @@
 # Carvana Advanced Search Site
 
-Carvana is an online used vehicle retailer in the US. I have been an investor in the company for a while and am planning on buying my next car there, but the search UI leaves a lot to be desired.
+Carvana is an online used vehicle retailer in the US. I love the idea in general and am planning on buying my next car there, but the search UI leaves a lot to be desired.
 
-This project intends to increase filterable fields, allow for saving and tracking searches, and provide details about saved searches or vehicles while offline.
+This project intends to increase filterable fields, and allow for saving advanced searches.
 
-Possible post-mvp features include integrations with additional services and APIs to add aditional information about vehicles.
+Possible post-mvp features include tracking searches, offline viewing of favorited vehicles (PWA), and integrations with additional services to add aditional information about vehicles.
 
-### User Stories
+### MVP User Stories
 
-1. As a user, I want to be able to filter cars by all currently included fields in the carvana search.
+1. As a user, I want to be able to filter vehicles by the following fields that are already available in the standard Carvana search:
 
-1. As a user, I want to be able to filter cars by additional fields including:
+   - price
+   - mileage
+   - make and model
+   - color
+   - transmission
+   - drive type
+   - body type
+
+1. As a user, I want to be able to filter vehicles by additional fields including:
 
    - car length
    - number of keys
@@ -21,25 +29,26 @@ Possible post-mvp features include integrations with additional services and API
    - recall status
    - purchase pending status
 
-1. As a user I want to be able to sort by date added to inventory.
+1. As a user I want to be able to sort by the following fields:
 
-1. As a user I want to be able to exclude certain brands, models, colors or body styles from a search.
+   - date added to inventory
+   - price
+   - mileage
+   - year
+
+1. As a user I want to be able to exclude vehicles from a search based on:
+
+   - make and model
+   - color
+   - body style
 
 1. As a user I want to be able to sign up for an account and save a search.
 
 1. As a registered user I want to be able to add vehicles to my favorites list and be notified on price and availability changes.
 
-1. As a registered user I want to be able to view only vehicles that have appeared in my searches since I last logged in.
-
-1. As a registered user I want to be able to change my email and password.
-
 1. As a registered user I want to be able to reset my password if it is forgotten.
 
 1. As a system, I want vehicle inventory to be refreshed daily at a minimum.
-
-1. As an admin I want to be able to sign in and view an admin dashboard.
-
-1. As an admin I want the ability to view registerd users, manually refresh the inventory, and view usage statistics.
 
 ### Planned Architecture
 
