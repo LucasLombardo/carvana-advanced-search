@@ -1,12 +1,21 @@
 {
     "name": "carvana-advanced-search-server",
-    "main": "dist/index.js",
+    "main": "dist/app.js",
     "license": "UNLICENSED",
     "scripts": {
-        "build": "tsc"
+        "dev": "ts-node-dev --respawn src/app.ts",
+        "build": "npm run clean && tsc",
+        "clean": "rimraf ./dist",
+        "serve": "node dist/app.js"
     },
     "devDependencies": {
         "prettier": "^1.19.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.0.0-pre.44",
         "typescript": "^3.8.3"
+    },
+    "dependencies": {
+        "apollo-server-koa": "^2.11.0",
+        "koa": "^2.11.0"
     }
 }
