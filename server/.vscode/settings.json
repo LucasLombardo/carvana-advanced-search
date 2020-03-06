@@ -1,6 +1,9 @@
 {
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#e535ab",
-    "titleBar.inactiveBackground": "#c42e92"
-  }
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#e535ab",
+        "titleBar.inactiveBackground": "#c42e92"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
 }
