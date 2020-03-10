@@ -5,7 +5,7 @@ services:
     depends_on:
       - mysql-db
     environment:
-      - DB_URI=mysql://root:password@mysql-db/db?charset=UTF8
+      - DB_URI=mysql://root:password@mysql-db/db
     ports:
       - 8100:8100
     volumes:

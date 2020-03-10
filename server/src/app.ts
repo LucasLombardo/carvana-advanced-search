@@ -1,12 +1,22 @@
 import Koa from "koa"
 import ApolloServer from "./apollo"
+import { createConnection } from "typeorm"
 
-const app = new Koa()
+const init = async () => {
+    await createConnection({
+        type: "mysql",
+        url: process.env.DB_URI,
+    })
 
-app.use(ApolloServer.getMiddleware())
+    const app = new Koa()
 
-app.listen({ port: 8100 }, () =>
-    console.log(
-        `🚀 Server ready at http://localhost:8100${ApolloServer.graphqlPath}`
+    app.use(ApolloServer.getMiddleware())
+
+    app.listen({ port: 8100 }, () =>
+        console.log(
+            `🚀 Server ready at http://localhost:8100${ApolloServer.graphqlPath}`
+        )
     )
-)
+}
+
+init()
