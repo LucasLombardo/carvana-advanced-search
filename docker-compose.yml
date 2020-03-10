@@ -1,0 +1,20 @@
+version: "3"
+services:
+  server:
+    build: "./server"
+    depends_on:
+      - mysql-db
+    environment:
+      - DB_URI=mysql://root:password@mysql-db/db?charset=UTF8
+    ports:
+      - 8100:8100
+    volumes:
+      - ./server:/opt/app
+
+  mysql-db:
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+    image: mysql:5.7
+    ports:
+      - 0.0.0.0:8200:3306
