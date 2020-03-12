@@ -1,5 +1,9 @@
+import fetchModel from "./fetchModel"
+import { MODELS } from "./constants"
+
 const refreshInventory = async () => {
-    return 10000
+    const res = await fetchModel(MODELS[0])
+    return res.length
 }
 
 export default refreshInventory
