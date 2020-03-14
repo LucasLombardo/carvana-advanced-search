@@ -2,9 +2,9 @@ import refreshInventory from "./helpers/refreshInventory"
 
 export const resolvers = {
     Mutation: {
-        refreshInventory: async () => {
-            const vehicleCount = await refreshInventory()
-            return vehicleCount
+        refreshInventory: (_parent: any, _args: any, ctx: any) => {
+            refreshInventory(ctx.db)
+            return `OK`
         },
     },
 }
