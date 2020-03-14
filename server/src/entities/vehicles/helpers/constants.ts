@@ -1,19 +1,14 @@
-export const SEARCH_CONFIG = {
-    // Config may need to change in the future, using unofficial API
-    uri: `https://apim.carvana.io/search-api/api/v1/search/search`,
-    method: `POST`,
-    headers: {
-        accept: `application/json, text/plain, */*`,
-        "accept-language": `en-US,en;q=0.9`,
-        "cache-control": `no-cache`,
-        "content-type": `application/json`,
-        "correlation-context": `browserCookieId=aacc5756-533f-4fd2-b866-2f5d033843a6`,
-        pragma: `no-cache`,
-        "request-context": `appId=cid-v1:084b0fe7-2d8b-4437-aa5b-3dc5ecab0946`,
-        "request-id": `|60ded5a42f904386adfb04193b5efe8c.ed84ac33c27a4553`,
-        "sec-fetch-mode": `cors`,
-        "sec-fetch-site": `cross-site`,
-    },
+export const HEADERS = {
+    accept: `application/json, text/plain, */*`,
+    "accept-language": `en-US,en;q=0.9`,
+    "cache-control": `no-cache`,
+    "content-type": `application/json`,
+    "correlation-context": `browserCookieId=aacc5756-533f-4fd2-b866-2f5d033843a6`,
+    pragma: `no-cache`,
+    "request-context": `appId=cid-v1:084b0fe7-2d8b-4437-aa5b-3dc5ecab0946`,
+    "request-id": `|60ded5a42f904386adfb04193b5efe8c.ed84ac33c27a4553`,
+    "sec-fetch-mode": `cors`,
+    "sec-fetch-site": `cross-site`,
 }
 
 export const MODELS = [
