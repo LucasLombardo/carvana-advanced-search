@@ -42,7 +42,7 @@ const fetchModel = async (modelId: number) => {
     // get inventory from each page
     for (let i = 2; i <= pageCount; i++) {
         const { inventory } = await fetchPage(i)
-        result = [...result, ...inventory]
+        result = [...result, ...inventory.vehicles]
     }
 
     // get more details for each vehicles
