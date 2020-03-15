@@ -2,8 +2,10 @@ import { makeExecutableSchema } from "apollo-server-koa"
 import { merge } from "lodash"
 
 import * as examples from "../entities/examples"
+import * as vehicles from "../entities/vehicles"
+const entities = [examples, vehicles]
 
-const typeDefs = `
+const baseTypeDefs = `
   type Query {
     _empty: String
   }
@@ -12,7 +14,7 @@ const typeDefs = `
   }
 `
 
-export default makeExecutableSchema({
-    typeDefs: [typeDefs, examples.typeDefs],
-    resolvers: merge(examples.resolvers),
-})
+const typeDefs = [baseTypeDefs, ...entities.map(ent => ent.typeDefs)]
+const resolvers = merge({}, ...entities.map(ent => ent.resolvers))
+
+export default makeExecutableSchema({ typeDefs, resolvers })
