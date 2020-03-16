@@ -5,8 +5,14 @@ import { IContext } from "../../app" // eslint-disable-line no-unused-vars
 export const resolvers = {
     Query: {
         vehicle: async (_parent: any, args: IVehicleArgs, ctx: IContext) => {
-            const res = await ctx.db.findOne(Vehicle, args.id)
-            return res || null
+            return await ctx.db.findOne(Vehicle, args.id)
+        },
+        vehicles: async (_parent: any, args: IVehiclesArgs, ctx: IContext) => {
+            const options = {
+                skip: Math.max(args.skip, 0),
+                take: Math.max(args.limit, 1),
+            }
+            return await ctx.db.find(Vehicle, options)
         },
     },
     Mutation: {
@@ -19,4 +25,9 @@ export const resolvers = {
 
 interface IVehicleArgs {
     id: number
+}
+
+interface IVehiclesArgs {
+    skip: number
+    limit: number
 }

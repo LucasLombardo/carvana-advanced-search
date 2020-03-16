@@ -3,6 +3,7 @@ import { gql } from "apollo-server-koa"
 export const typeDefs = gql`
     extend type Query {
         vehicle(id: Int!): Vehicle
+        vehicles(skip: Int = 0, limit: Int = 10): [Vehicle]!
     }
 
     extend type Mutation {
