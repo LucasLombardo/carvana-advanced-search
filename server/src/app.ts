@@ -1,8 +1,6 @@
 import Koa from "koa"
 import ApolloServer from "./apollo"
-import { createConnection } from "typeorm"
-
-console.log(process.env.DB_URI)
+import { createConnection, EntityManager } from "typeorm" // eslint-disable-line no-unused-vars
 
 const init = async () => {
     const connection = await createConnection({
@@ -27,3 +25,15 @@ const init = async () => {
 }
 
 init()
+
+export interface IContext {
+    req: any
+    request: any
+    res: any
+    response: any
+    app: any
+    originalUrl: string
+    socket: any
+    // custom properties
+    db: EntityManager
+}
