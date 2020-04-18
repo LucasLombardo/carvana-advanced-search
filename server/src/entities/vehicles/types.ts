@@ -18,6 +18,14 @@ export const typeDefs = gql`
             maxKeys: Int = 1000
             minDoors: Int = 0
             maxDoors: Int = 1000
+            makes: [String!]
+            notMakes: [String!]
+            models: [String!]
+            notModels: [String!]
+            driveTypes: [String!]
+            tagsContain: String
+            bodyTypes: [String!]
+            isPurchasePending: Boolean
         ): [Vehicle]!
     }
 
@@ -62,5 +70,6 @@ export const typeDefs = gql`
         seating: String
         bodyType: String
         length: Int
+        vehicleTags: String
     }
 `
