@@ -48,6 +48,10 @@ export const resolvers = {
                 options.where.isPurchasePending = args.isPurchasePending || null
             }
 
+            if (args.sortBy) {
+                options.order = { [args.sortBy]: args.order }
+            }
+
             return await ctx.db.find(Vehicle, options)
         },
     },
@@ -86,4 +90,6 @@ interface IVehiclesArgs {
     bodyTypes: string[]
     tagsContain: string
     isPurchasePending: boolean
+    sortBy: "date" | "price" | "mileage" | "year"
+    order: "ASC" | "DESC"
 }

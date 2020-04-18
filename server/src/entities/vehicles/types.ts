@@ -26,11 +26,25 @@ export const typeDefs = gql`
             tagsContain: String
             bodyTypes: [String!]
             isPurchasePending: Boolean
+            sortBy: SortBy
+            order: Order = ASC
         ): [Vehicle]!
     }
 
     extend type Mutation {
         refreshInventory: String!
+    }
+
+    enum SortBy {
+        addedToCoreInventoryDateTime
+        price
+        mileage
+        year
+    }
+
+    enum Order {
+        ASC
+        DESC
     }
 
     type Vehicle {
