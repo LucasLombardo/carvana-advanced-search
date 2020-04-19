@@ -1,9 +1,12 @@
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import Container from "@material-ui/core/Container";
+import VehicleCards from "../components/vehicleCards";
 
 const QUERY = gql`
   query {
-    vehicles {
+    vehicles(limit: 3) {
+      id
       make
       model
       price
@@ -18,13 +21,9 @@ export default () => {
   }
 
   return (
-    <div>
-      <p>Hello Apollo</p>
-      <ul>
-        {data.vehicles.map(({ make, model, price }) => (
-          <li>{make + " " + model + " $" + price}</li>
-        ))}
-      </ul>
-    </div>
+    <Container maxWidth="sm">
+      <h1>Hello Apollo & Material UI</h1>
+      <VehicleCards vehicles={data.vehicles} title={"3 Vehicles"} />
+    </Container>
   );
 };
