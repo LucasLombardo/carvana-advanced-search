@@ -1,5 +1,5 @@
 module.exports = {
-  env: {
-    GQL_ENDPOINT: "http://localhost:8100/graphql",
-  },
-};
+    env: {
+        GQL_ENDPOINT: "http://localhost:8100/graphql",
+    },
+}
